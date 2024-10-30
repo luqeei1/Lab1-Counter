@@ -10,6 +10,6 @@ module counter #(
 );
 
 always_ff @ (posedge clk)
-  if (rst) count <= {v};
-  else     count <= ld ? v : count + {{WIDTH-1{1'b0}},1'b1};
+  if (rst) count <= v;
+  else if(ld) count <= count + {{WIDTH-1{1'b0}},1'b1};
 endmodule

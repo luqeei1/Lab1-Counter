@@ -1,4 +1,4 @@
-#include "Vcounter.h"
+#include "Vtop.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "vbuddy.cpp"  // Insert Vbuddy code here
@@ -13,13 +13,13 @@ int main(int argc, char **argv, char **env) {
     Verilated::commandArgs(argc, argv);
 
     // Init top verilog instance
-    Vcounter* top = new Vcounter;
+    Vtop* top = new Vtop;
 
     // Init trace dump
     Verilated::traceEverOn(true);
     VerilatedVcdC* tfp = new VerilatedVcdC;
     top->trace(tfp, 99);
-    tfp->open("counter.vcd");
+    tfp->open("top.vcd");
 
     // init Vbuddy
     if (vbdOpen()!=1) return(-1);
@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env) {
     // Initialize simulation inputs
     top->clk = 1;
     top->rst = 1;
-    top->ld = 0;
+    top->en = 0;
     vbdSetMode(1);
     top->v = vbdValue();
 
@@ -45,10 +45,10 @@ int main(int argc, char **argv, char **env) {
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
         // Send count value to Vbuddy
-        vbdHex(4, (int(top->count) >> 16) & 0xF);
-        vbdHex(3, (int(top->count) >> 8) & 0xF);
-        vbdHex(2, (int(top->count) >> 4) & 0xF);
-        vbdHex(1, (int(top->count) & 0xF));
+        vbdHex(4, (int(top->bcd) >> 16) & 0xF);
+        vbdHex(3, (int(top->bcd) >> 8) & 0xF);
+        vbdHex(2, (int(top->bcd) >> 4) & 0xF);
+        vbdHex(1, (int(top->bcd) & 0xF));
         vbdCycle(i + 1);
 
         // vbdPlot(int(top->count), 0, 255);
@@ -56,7 +56,7 @@ int main(int argc, char **argv, char **env) {
 
         // Change input stimuli
         top->rst = (i < 2) | (i == 15);
-        top->ld = vbdFlag();
+        top->en = vbdFlag();
         if (Verilated::gotFinish()) exit(0);
     }
 

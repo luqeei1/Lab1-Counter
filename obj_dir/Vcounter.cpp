@@ -13,9 +13,9 @@ Vcounter::Vcounter(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vcounter__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , rst{vlSymsp->TOP.rst}
-    , ld{vlSymsp->TOP.ld}
+    , en{vlSymsp->TOP.en}
     , v{vlSymsp->TOP.v}
-    , count{vlSymsp->TOP.count}
+    , bcd{vlSymsp->TOP.bcd}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

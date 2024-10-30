@@ -10,11 +10,167 @@ VL_INLINE_OPT void Vcounter___024root___sequent__TOP__0(Vcounter___024root* vlSe
     if (false && vlSelf) {}  // Prevent unused
     Vcounter__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vcounter___024root___sequent__TOP__0\n"); );
+    // Init
+    CData/*7:0*/ __Vdly__top__DOT__count;
     // Body
-    vlSelf->count = (0xffU & ((IData)(vlSelf->rst) ? (IData)(vlSelf->v)
-                               : ((IData)(vlSelf->ld)
-                                   ? (IData)(vlSelf->v)
-                                   : ((IData)(1U) + (IData)(vlSelf->count)))));
+    __Vdly__top__DOT__count = vlSelf->top__DOT__count;
+    if (vlSelf->rst) {
+        __Vdly__top__DOT__count = vlSelf->v;
+    } else if (vlSelf->en) {
+        __Vdly__top__DOT__count = (0xffU & ((IData)(1U) 
+                                            + (IData)(vlSelf->top__DOT__count)));
+    }
+    vlSelf->top__DOT__count = __Vdly__top__DOT__count;
+    vlSelf->top__DOT__myDecoder__DOT__result = 0U;
+    vlSelf->top__DOT__myDecoder__DOT__result = ((0xfff00U 
+                                                 & vlSelf->top__DOT__myDecoder__DOT__result) 
+                                                | (IData)(vlSelf->top__DOT__count));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 8U)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xff0ffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf00U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                          >> 8U)) << 8U)));
+    }
+    if ((5U <= (0xfU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                        >> 0xcU)))) {
+        vlSelf->top__DOT__myDecoder__DOT__result = 
+            ((0xf0fffU & vlSelf->top__DOT__myDecoder__DOT__result) 
+             | (0xf000U & (((IData)(3U) + (vlSelf->top__DOT__myDecoder__DOT__result 
+                                           >> 0xcU)) 
+                           << 0xcU)));
+    }
+    vlSelf->top__DOT__myDecoder__DOT__result = (0xfffffU 
+                                                & (vlSelf->top__DOT__myDecoder__DOT__result 
+                                                   << 1U));
+    vlSelf->bcd = (0xfffU & (vlSelf->top__DOT__myDecoder__DOT__result 
+                             >> 8U));
 }
 
 void Vcounter___024root___eval(Vcounter___024root* vlSelf) {
@@ -39,7 +195,7 @@ void Vcounter___024root___eval_debug_assertions(Vcounter___024root* vlSelf) {
         Verilated::overWidthError("clk");}
     if (VL_UNLIKELY((vlSelf->rst & 0xfeU))) {
         Verilated::overWidthError("rst");}
-    if (VL_UNLIKELY((vlSelf->ld & 0xfeU))) {
-        Verilated::overWidthError("ld");}
+    if (VL_UNLIKELY((vlSelf->en & 0xfeU))) {
+        Verilated::overWidthError("en");}
 }
 #endif  // VL_DEBUG
