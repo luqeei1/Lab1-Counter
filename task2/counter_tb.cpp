@@ -50,6 +50,9 @@ int main(int argc, char **argv, char **env) {
         // Change input stimuli
         top->rst = (i < 2) | (i == 15);
         top->en = vbdFlag();
+        if( top->en == 0){
+            top->en = -1;
+        }
         if (Verilated::gotFinish()) exit(0);
     }
 
